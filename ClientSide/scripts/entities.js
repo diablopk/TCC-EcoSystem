@@ -25,7 +25,8 @@ function createEntity(x, y, template, bMustMutate=true) {
     e[key] = template[key];
     newTemplate[key] = template[key]
   }
-  e.template = Object.create(newTemplate);
+
+  e.template = template
 
   if(bMustMutate) e.mutation()
 
@@ -166,7 +167,7 @@ templates.pred = {
   toAvoid: ["pred"],
   toChase: ["prey"],
   toEat: ["prey"],
-  topSpeed: 5.0,
+  topSpeed: 4.8,
   lightSensibility: 1,
   mutationChance : 0.10,
   onDeath: function (newEntities) {
